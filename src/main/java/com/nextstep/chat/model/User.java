@@ -31,3 +31,8 @@ public class User {
         lastSeen = LocalDateTime.now();
     }
 }
+
+enum UserType {
+    JOB_SEEKER,
+    JOB_GIVER
+}
