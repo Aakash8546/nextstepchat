@@ -1,4 +1,10 @@
 package com.nextstep.chat.model;
 
-public class UserType {
+import jakarta.persistence.*;
+import lombok.Data;
+import java.time.LocalDateTime;
+
+public enum UserType {
+    JOB_SEEKER,
+    JOB_GIVER
 }

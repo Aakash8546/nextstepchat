@@ -32,7 +32,3 @@ public class User {
     }
 }
 
-enum UserType {
-    JOB_SEEKER,
-    JOB_GIVER
-}
