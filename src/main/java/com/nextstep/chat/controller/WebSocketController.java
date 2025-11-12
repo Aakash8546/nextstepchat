@@ -2,7 +2,9 @@ package com.nextstep.chat.controller;
 
 import com.nextstep.chat.dto.MessageDTO;
 import com.nextstep.chat.service.MessageService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -52,13 +54,11 @@ public class WebSocketController {
         public void setTyping(boolean typing) { this.typing = typing; }
     }
 
+    @Setter
+    @Getter
     static class UserStatus {
         private Long userId;
         private boolean online;
 
-        public Long getUserId() { return userId; }
-        public void setUserId(Long userId) { this.userId = userId; }
-        public boolean isOnline() { return online; }
-        public void setOnline(boolean online) { this.online = online; }
     }
 }
