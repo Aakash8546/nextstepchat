@@ -55,7 +55,7 @@ public class WebSocketEventListener {
                 user.setLastSeen(LocalDateTime.now());
                 userRepository.save(user);
 
-                // Broadcast user offline status
+
                 messagingTemplate.convertAndSend(
                         "/topic/user/" + userId + "/status",
                         new UserStatusMessage(userIdLong, false)

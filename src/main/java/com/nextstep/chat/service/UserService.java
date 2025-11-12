@@ -15,7 +15,7 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    // CREATE
+
     @Transactional
     public User createUser(User user) {
         // Check username exists
@@ -27,7 +27,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    // READ
+
     public User getUserById(Long userId) {
         return userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
@@ -42,7 +42,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    // UPDATE
+
     @Transactional
     public User updateUser(Long userId, User updateData) {
         User user = getUserById(userId);
@@ -70,13 +70,13 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    // DELETE
+
     @Transactional
     public void deleteUser(Long userId) {
         userRepository.deleteById(userId);
     }
 
-    // SEARCH
+
     public List<User> searchUsers(String query) {
         return userRepository.findAll().stream()
                 .filter(u -> u.getUsername().toLowerCase().contains(query.toLowerCase()))
